@@ -71,7 +71,7 @@
 0.5
 #calc_abs
 0
-###dopants, radicals, defects, ....
+###dopants, radicals, defects, .... on-sites in eV
 #nb_free_radicals
 2
 #free_rad_electron_minus
@@ -81,7 +81,7 @@
 #pos_free_radical_1
 1
 #pos_free_radical_2
-43
+2
 #nb_double_h
 0
 #double_H_electron_plus
@@ -89,6 +89,6 @@
 #on_site_double_h
 4
 #pos_double_h_1
-40
+1
 #pos_double_h_2
-43
+2

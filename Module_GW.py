@@ -181,6 +181,7 @@ def calc_GW(x, y, z, Uhu, prop_u, on_site, Nel, bp, bm, Nat, omega, omega_homo, 
             f.write( 'Number of electrons: ' + str(nb_el) + '\n')    
             f.write( 'Integral of DOS: ' + str(int_dos) + '\n')    
             f.write( 'LDOS: ' + str(np.diag(dens_mat)) + '\n')  
+            f.write( 'Total spin: ' + str(np.sum(np.diag(dens_mat)[0:Nat]-np.diag(dens_mat)[Nat:])) + '\n')  
             
         
         #If iteration is 1, we set all the quantities to G0W0 computations and use it as outputs
@@ -366,20 +367,6 @@ def calc_GW(x, y, z, Uhu, prop_u, on_site, Nel, bp, bm, Nat, omega, omega_homo, 
     total_double_occ_MF =  np.diag(dens_mat_MF)[0:Nat] * np.diag(dens_mat_MF)[Nat:]
     np.savez('MF double occupation - computation %i' %(computation_name), total_double_occ_MF )
     
-    with open('result-%i.txt' %(computation_name), 'a') as f:
-        f.write( '\n' + '###############################################' + '\n')
-        f.write('Results summary: MF '  + '\n')
-        f.write( '###############################################' + '\n') 
-        f.write( 'Total spin MF: %f' %(spin_MF)  + '\n')
-        f.write( 'Sum of absolute values of local spins: %f' %(magnetization_MF) + '\n')
-
-    with open('result-%i.txt' %(computation_name), 'a') as f:
-        f.write( '\n' + '###############################################' + '\n')
-        f.write('Results summary: GW '  + '\n')
-        f.write( '###############################################' + '\n') 
-        f.write( 'Total spin GW: %f' %(np.sum(spin_GW_simps))  + '\n')
-        f.write( 'Sum of absolute values of local spins: %f' %(np.sum(np.abs(spin_GW_simps))) + '\n')    
-     
     ind_5 = int(np.where(np.abs(omega*2*np.pi*27.21-5) == np.amin(np.abs(omega*2*np.pi*27.21-5))) [0])
     ind_m5 = int(np.where(np.abs(omega*2*np.pi*27.21+5) == np.amin(np.abs(omega*2*np.pi*27.21+5))) [0])
     np.savez('MF DOS - computation %i' %(computation_name), omega*2*np.pi*27.21, dos_MF )

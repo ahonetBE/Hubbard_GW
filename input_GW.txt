@@ -73,9 +73,9 @@
 0
 ###dopants, radicals, defects, ....
 #nb_free_radicals
-1
-#free_rad_electron_minus
 2
+#free_rad_electron_minus
+1
 #on_site_free_rad
 -0.4
 #pos_free_radical_1

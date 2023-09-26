@@ -29,7 +29,7 @@ This code was developed and tested using:
 
 ## Citing
 
-Hubbard_GW is free to use under the conditions of the GNU GENERAL PUBLIC LICENSE version 3 open source license. To cite this code, please use the Zenodo DOI of the project: 10.5281/zenodo.8363607
+Hubbard_GW is free to use under the conditions of the GNU GENERAL PUBLIC LICENSE version 3 open source license.
 
 ## Questions, remarks, reports?
 
